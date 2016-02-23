@@ -1,0 +1,58 @@
+    <div class="col-12">
+        <div class="post">
+            
+            
+            <div class="post-footer">
+                <div class="input-group"> 
+                    <input class="form-control" id="comtxt" placeholder="Add a comment" type="text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" onclick="freshCom({{blog.id}})">Go!</button>
+                        <!--  enter or button to submit --> 
+                    </span>
+                </div>
+                <ul class="comments-list">
+                    {% for com in comments %}  <!-- father null  -->
+                    {% if not com.father %}
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="{{com.user.portrait}}" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="user">闻小雨</h4>
+                                <h5 class="time">{{com.sometime_ago.1}} {{com.sometime_ago.0}} ago</h5>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="icon-reply" 
+                                onclick="disreply({{blog.id}},{{com.id}},{{forloop.counter}})"></i>
+                                <!-- past time  -->
+                            </div>
+                            <p>{{com.content}}</p>
+                            <input class="form-control reply hidden" id="replytxt{{forloop.counter}}" 
+                            placeholder="Enter to submit" type="text">  
+                        </div>
+                        {% if com.comment_set.all %}
+                        <ul class="comments-list">   <!--  child comment  -->
+                            {% for child in com.comment_set.all%}
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="{{child.user.portrait}}" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">{{child.user.name}}</h4>
+                                        <h5 class="time">{{child.sometime_ago.1}} {{child.sometime_ago.0}} ago</h5>
+                                    </div>
+                                    <p>{{child.content}}</p>
+                                </div>
+                            </li> 
+                            {% endfor %}
+                        
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div> 

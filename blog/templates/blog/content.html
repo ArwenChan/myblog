@@ -1,0 +1,62 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% load custom_markdown %}
+{% block title %}
+<title>{{blog.name}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid" > 
+  <div class="blog-con">
+    <div class="row">
+      <div class="col-12">
+          <h1>{{blog.name}}</h1>
+          <br>
+          <ul class="list-inline littlefonts">
+            <li>阅读 {{blog.reads}}</li>
+            <li>喜欢 {{blog.likes}}</li>
+            <li>评论 {{blog.comments}}</li>
+          </ul>
+          {{blog.content|custom_markdown }}
+        <br/>
+        <br/>        
+        <div class="ds-share" data-thread-key="{{blog.id}}" data-title="{{blog.name}}" data-images="" data-content="来自arwen.space" data-url="http://arwen.space/blog/{{blog.id}}">
+          <div class="ds-share-inline">
+            <ul  class="pull-right ds-share-icons-16">
+              <li>分享到:</li>
+              <li><a class="ds-weibo"  href="javascript:void(0);" data-service="weibo">微博</a>
+              </li>
+              <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p> 
+          <button class="btn likebutton" onclick="like({{blog.id}})">
+            <i class="icon-heart-empty icon-large" id="like"></i>&nbsp;喜欢
+          </button>
+        </p>
+      </div>
+    </div>
+    <div class="row" id="comarea">
+        <!-- 多说评论框 start -->
+        <div class="ds-thread col-12" data-thread-key="{{blog.id}}" data-title="{{blog.name}}" data-url="javascript:return window.location.href;">   </div>
+        <!-- 多说评论框 end -->
+
+    </div>
+    </div>
+  
+</div>
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"arwen"};
+        var ds = document.createElement('script');
+        ds.id = 'ds';
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+        <!-- 多说公共JS代码 end -->
+{% endblock %}

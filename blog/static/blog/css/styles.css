@@ -1,0 +1,261 @@
+
+.navbar-form input, .form-inline input {
+  width:auto;
+}
+
+body{
+  overflow-x: hidden; 
+  overflow-y: scroll;
+  line-height: 2;
+  font-size: 16px;
+  font-family:"Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+  -webkit-font-smoothing: antialiased;            
+}
+/* ali iconfont */
+@font-face {
+  font-family: 'iconfont'; /*自定的字体名称*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*  go on */
+
+blockquote {
+    border-left: 4px solid #dddddd;
+    padding: 0 15px;
+    color: #777777;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+code {
+  font-family: "sans-serif";
+  color:#000000;
+  background-color: #ECECEC;
+  padding: 5px 5px;
+  white-space: nowrap; 
+}
+
+.likebutton {
+  border-radius: 15px;
+  border-color: #FF8A7F;
+  color: #FF8A7F;
+  background-color: #FAFFFF;
+}
+
+.likebutton:hover {
+  border-radius: 15px;
+  border-color: #FF8A7F;
+  color: #FF8A7F;
+  background-color: #FFF1F1;
+}
+
+.littlefonts {
+  font-size: 12px;
+  color: #797576;
+}
+
+
+.blog-content {
+  margin-left: 28%;
+}
+
+.blog-detail {
+  margin: auto;
+  text-align: center;
+}
+
+.blog-con {
+  max-width: 750px;
+  text-align: left;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+footer {
+  margin-top:60px;
+  margin-right: -20px;
+  padding-top:20px;
+  padding-bottom:30px;
+  background-color:#ededed;
+  text-align: center;
+}
+
+
+.masthead {
+  
+  min-height:100px;
+  padding-left:5%;
+}
+
+.search-field {
+  float: right;
+  width:150px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.tag-area {
+
+  margin-top: 60px;
+  padding-left: 10px;
+
+}
+
+.btn-round {
+  border-radius:13px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+
+.btn-round-chosen{
+  border-color:#00A501;
+  color:#FFFFFA; 
+  background-color: #00A501;
+}
+
+.btn-round-chosen:hover{
+  border-color:#009601;
+  color:#FFFFFA; 
+  background-color: #009601;
+}
+
+.btn-more {
+  margin-top: 0;
+  text-align: center;
+}
+
+.btn-green {
+  background-color: #00A501;
+  color:#FFFFFA;  
+}
+
+.btn-green:hover {
+  background-color: #009601;
+  color:#FFFFFA;
+}
+
+.story-img {
+  margin-top:25%;
+  display:block;
+}
+
+a,a:hover {
+  color:#223344;
+  text-decoration:none;
+}
+
+.icon-bar {
+  background-color:#fff;
+}
+
+
+.panel-body {
+  margin-left: 30px;
+  min-height: 450px;
+}
+
+.thumbnail {
+  margin-bottom:8px;
+}
+
+.img-container {
+  overflow:hidden;
+  height:170px;
+}
+
+.img-container img {
+  min-width:280px;
+  min-height:180px;
+  max-width:380px;
+  max-height:280px;
+}
+
+.txt-container {
+  overflow:hidden;
+  height:100px;
+}
+
+
+.label-float{
+  margin:0 auto;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width:100%;
+  opacity:.9;
+  padding:6px;
+  color:#fff;
+}
+    
+
+
+.fengmian {
+  position: fixed;
+  left: 60px;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  max-width: 300px;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  z-index: 998;
+}
+
+#comarea {
+  margin-top: 20px;
+}
+
+hr {
+  margin: 0;
+}
+
+
+/* Mobile */
+
+@media(max-width: 900px) {
+  .fengmian {
+    display: none;
+  }
+  .blog-content {
+    margin-left: 40px;
+    max-width: 100%;
+  }
+  .blog-con {
+  padding-left: 80px;
+  padding-right: 30px;
+  }
+}
+
+@media(max-width: 768px) {
+  .blog-content {
+    margin-left: -5px;
+  }
+  .panel-body {
+    margin-left: 5px;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+  .masthead {  
+  padding-left:0;
+  }
+  .blog-con {
+  padding-left: 25px;
+  padding-right: 25px;
+  }
+}
+

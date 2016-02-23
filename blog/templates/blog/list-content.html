@@ -1,0 +1,39 @@
+{% load custom_markdown %}
+{% for blog in blogs %}
+            <div class="row">    
+                
+                <div class="col-md-10 col-sm-9 col-xs-12">
+                  <h3><a style="color:#223344;" href="{% url 'con-blog' blog.id %}">{{blog.name}}</a></h3>
+                  
+                      <p>{{blog.content|custom_markdown|striptags|truncatechars:80}}</p>
+                    
+                      <p class="pull-right">
+                      {% for tag in blog.tags.all%}
+                      <span class="label label-default">{{tag.name}}</span>
+                      {% endfor %}
+                      </p>
+                      <ul class="list-inline littlefonts">
+                      <li>
+                      {{ blog.published_days }}
+                      </li>
+                      <li><i class="icon-eye-open"></i> {{blog.reads}}</li>
+                      <li><i class="icon-comment"></i> {{blog.comments}}</li>
+                      <li><i class="icon-heart"></i> {{blog.likes}}</li>
+                      </ul>
+
+                  
+                
+              </div>
+              <div class="col-md-2 col-sm-3 hidden-xs">
+                  <img class="story-img" src="{{blog.title_image}}" 
+                  onerror="javascript:this.style.display='none';"/>
+              </div>
+          </div>
+          <hr>
+{% endfor %}
+{% if nomore %}
+  <script type="text/javascript">
+  no_more = true;
+  </script>
+{% endif %}
+

@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<div class="fengmian">
+  <img src="{% static 'blog/images/fengmian.jpg' %}" width="100%" height="100%">
+</div>
+<div class="masthead">  
+      <div class="container-fluid">
+        <div class="row search-field">
+          <div class="col-12">                
+            <input type="text" id="query_txt" placeholder="搜索" 
+            class="form-control"/>
+          </div>
+        </div>
+        <div class="row tag-area" id="tag-area">
+          <div class="col-md-10 col-sm-9">
+          {% for tag in tags %}
+            <button id="{{tag.name}}"  class="btn btn-default btn-sm btn-round" onclick="tagCheck('{{tag.name}}')">
+            {{tag.name}}
+            </button>
+          {% endfor %} 
+          </div>
+        </div> 
+      <!-- /cont -->
+      </div>
+     
+</div>

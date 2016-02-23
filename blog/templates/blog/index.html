@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="blog-content">
+{% include 'blog/header.html' %}
+  <div class="container-fluid" > 
+    
+      <div class="panel-body" id="panel-body">
+          {% include 'blog/list-content.html' %}
+      </div>
+      <div class="btn-more">
+          <btn onclick="moreBlog()" class="btn btn-green">查看更多 
+          <i class="glyphicon glyphicon-chevron-right"></i>
+          </btn>
+      </div>
+    
+  </div>
+
+{% endblock %}
